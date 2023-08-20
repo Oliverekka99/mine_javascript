@@ -1,12 +1,12 @@
-const greeting = "Hello";
-const who = "World";
-// console.log("%s %s ",greeting,who);
+require("dotenv").config();
 
-// console.log(`${greeting} ${who}`); //3rd type of string called template literal
-// it is better to read than substitution
+const express = require("express");
+const app = express();
+const port = process.env.PORT;
 
-// const reverse = require("reverse.js")
-// reverse("hello")
-
-// TODO: Add in database connection string
-
+app.get("/", (req, res) => {
+  res.send(`Hello World!`);
+});
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
